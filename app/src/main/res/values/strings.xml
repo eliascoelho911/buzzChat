@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">lifetracker-android-compose</string>
+    <string name="no_due_date">Sem data</string>
+</resources>

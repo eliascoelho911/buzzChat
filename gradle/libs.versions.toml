@@ -1,0 +1,53 @@
+[versions]
+
+# Androidx
+agp = "8.2.0-alpha16"
+
+# Kotlin
+kotlin = "1.9.0"
+
+# Test
+junit = "4.13.2"
+
+# Compose
+compose = "1.5.0"
+compose-compiler = "1.5.0"
+
+[libraries]
+
+# Androidx
+androidx-coreKtx = { group = "androidx.core", name = "core-ktx", version = "1.10.1" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+androidx-viewmodelKtx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version = "2.6.1" }
+androidx-junitExt = { group = "androidx.test.ext", name = "junit", version = "1.1.5" }
+androidx-espressoCore = { group = "androidx.test.espresso", name = "espresso-core", version = "3.5.1" }
+androidx-viewmodelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.6.1" }
+androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common", version = "2.6.1" }
+
+# Kotlin
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.7.2" }
+kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.5.1" }
+kotlin-collectionsImmutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version = "0.3.5" }
+
+# Compose
+compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
+compose-uiToolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
+compose-activity = { group = "androidx.activity", name = "activity-compose", version = "1.7.2" }
+compose-uiTooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
+compose-uiTestManifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose" }
+compose-uiGraphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "compose" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version = "1.1.1" }
+
+# Others
+jodaTime = { group = "joda-time", name = "joda-time", version = "2.10.13" }
+
+# Test
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+[bundles]
+
