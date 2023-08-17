@@ -6,7 +6,7 @@ plugins {
 android {
     namespace = "com.lifetracker.ui"
 
-    compileSdk =34
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 24
@@ -34,6 +34,7 @@ dependencies {
     implementation(libs.compose.uiToolingPreview)
     implementation(libs.compose.material3)
     implementation(libs.compose.activity)
+    implementation(libs.compose.lifecycleRuntime)
     debugImplementation(libs.compose.uiTooling)
     debugImplementation(libs.compose.uiTestManifest)
 

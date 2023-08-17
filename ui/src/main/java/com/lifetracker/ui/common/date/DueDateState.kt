@@ -3,9 +3,10 @@ package com.lifetracker.ui.common.date
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import com.lifetracker.ui.common.util.date.formatToHoursMinutes
 import org.joda.time.LocalDateTime
 
-data class DueDate(
+data class DueDateState(
     val value: String,
     val color: DueDateColor
 )
@@ -31,15 +32,15 @@ data class DueDateColor(
 }
 
 @Composable
-fun dueDate(date: LocalDateTime): DueDate {
-    return if (date.isBefore(LocalDateTime.now())) {
-        DueDate(
-            value = date.toHoursMinutes(),
+fun LocalDateTime.toDueDateState(): DueDateState {
+    return if (isBefore(LocalDateTime.now())) {
+        DueDateState(
+            value = formatToHoursMinutes(),
             color = DueDateColor.expired(),
         )
     } else {
-        DueDate(
-            value = date.toHoursMinutes(),
+        DueDateState(
+            value = formatToHoursMinutes(),
             color = DueDateColor.upcoming(),
         )
     }

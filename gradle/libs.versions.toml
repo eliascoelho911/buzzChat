@@ -37,6 +37,7 @@ compose-uiTooling = { group = "androidx.compose.ui", name = "ui-tooling", versio
 compose-uiTestManifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose" }
 compose-uiGraphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "compose" }
 compose-material3 = { group = "androidx.compose.material3", name = "material3", version = "1.1.1" }
+compose-lifecycleRuntime = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version = "2.6.1" }
 
 # Others
 jodaTime = { group = "joda-time", name = "joda-time", version = "2.10.13" }
