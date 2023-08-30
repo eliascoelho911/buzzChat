@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.buzzchat.datadomain"
+    namespace = "com.eliascoelho911.common"
 
     compileSdk = 34
 
@@ -22,7 +22,8 @@ android {
 }
 
 dependencies {
-    implementation(libs.kotlin.serialization)
+    implementation(libs.androidx.coreKtx)
+    implementation(libs.androidx.appcompat)
 
     testImplementation(libs.junit)
 }

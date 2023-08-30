@@ -13,8 +13,9 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "lifetracker-android"
+rootProject.name = "buzzChat"
 
 include(":app")
 include(":data-domain")
 include(":ui")
+include(":common")

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Add Task -->
+    <string name="add_task_title_placeholder">Nome da tarefa</string>
+    <string name="add_task_description_placeholder">Descrição</string>
+
+</resources>

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.lifetracker.android"
+    namespace = "com.buzzchat.android"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.lifetracker.android"
+        applicationId = "com.buzzchat.android"
         compileSdk = 24
         targetSdk = 34
         versionCode = 1

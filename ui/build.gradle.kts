@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.lifetracker.ui"
+    namespace = "com.buzzchat.ui"
 
     compileSdk = 34
 
@@ -35,6 +35,7 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.compose.activity)
     implementation(libs.compose.lifecycleRuntime)
+    implementation(libs.accompanist.insets)
     debugImplementation(libs.compose.uiTooling)
     debugImplementation(libs.compose.uiTestManifest)
 
@@ -45,6 +46,7 @@ dependencies {
     implementation(libs.kotlin.collectionsImmutable)
 
     implementation(project(":data-domain"))
+    implementation(project(":common"))
 
     testImplementation(libs.junit)
 }
