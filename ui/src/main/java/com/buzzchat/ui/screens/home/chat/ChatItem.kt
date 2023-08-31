@@ -62,7 +62,10 @@ fun ChatItem(chat: Chat, modifier: Modifier = Modifier) {
                     modifier = Modifier.constrainAs(lastMessageRef) {
                         start.linkTo(personNameRef.start)
                         top.linkTo(personNameRef.bottom, margin = VerticalSpacing)
-                        end.linkTo(unreadBadgeRef.start, margin = HorizontalSpacing)
+                        end.linkTo(
+                            if (unreadMessages > 0) unreadBadgeRef.start else parent.end,
+                            margin = HorizontalSpacing
+                        )
                         width = Dimension.fillToConstraints
                     }
                 )
@@ -133,7 +136,7 @@ private class SampleChatProvider : PreviewParameterProvider<Chat> {
             Chat(
                 personPictureUrl = "",
                 personName = "Elias Coelho",
-                lastMessage = "Olá, tudo bem?",
+                lastMessage = "Olá, tudo bem? Como está a sua família? Estou com saudades de vocês.",
                 isTyping = false,
                 lastMessageTime = LocalDateTime.now().minusDays(2),
                 unreadMessages = 2
@@ -144,7 +147,7 @@ private class SampleChatProvider : PreviewParameterProvider<Chat> {
                 lastMessage = "Você viu o que aconteceu? Estou muito preocupada!",
                 isTyping = false,
                 lastMessageTime = LocalDateTime.now(),
-                unreadMessages = 12
+                unreadMessages = 0
             )
         )
 }
