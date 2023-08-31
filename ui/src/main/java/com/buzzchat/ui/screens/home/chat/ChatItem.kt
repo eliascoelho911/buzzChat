@@ -1,6 +1,7 @@
 package com.buzzchat.ui.screens.home.chat
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Badge
@@ -32,12 +33,14 @@ import org.joda.time.LocalDateTime
 import java.util.Locale
 
 @Composable
-fun ChatItem(chat: Chat, modifier: Modifier = Modifier) {
+fun ChatItem(
+    chat: Chat,
+    modifier: Modifier = Modifier,
+    onClick: (Chat) -> Unit = {},
+) {
     with(chat) {
-        Surface {
-            ConstraintLayout(
-                modifier = modifier,
-            ) {
+        Surface(onClick = { onClick(chat) }, modifier = modifier) {
+            ConstraintLayout(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
                 val (pictureRef, personNameRef, lastMessageRef, lastMessageTimeRef, unreadBadgeRef) = createRefs()
 
                 Picture(url = personPictureUrl, modifier = Modifier.constrainAs(pictureRef) {
