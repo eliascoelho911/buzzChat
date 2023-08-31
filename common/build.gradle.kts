@@ -24,6 +24,7 @@ android {
 dependencies {
     implementation(libs.androidx.coreKtx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.jodaTime)
 
     testImplementation(libs.junit)
 }
