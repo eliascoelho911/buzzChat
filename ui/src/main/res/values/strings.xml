@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Add Task -->
-    <string name="add_task_title_placeholder">Nome da tarefa</string>
-    <string name="add_task_description_placeholder">Descrição</string>
-
+    <string name="home_screen_title">BuzzChat</string>
+    <string name="is_typing">%s está digitando…</string>
 </resources>

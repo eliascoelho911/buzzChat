@@ -12,6 +12,8 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
@@ -20,6 +22,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
+import com.buzzchat.ui.R
 import com.buzzchat.ui.components.common.ProfilePlaceholder
 import com.buzzchat.ui.previews.LightDarkPreview
 import com.buzzchat.ui.screens.home.chat.model.Chat
@@ -54,16 +57,13 @@ fun ChatItem(chat: Chat, modifier: Modifier = Modifier) {
                     }
                 )
 
-                Text(
-                    text = lastMessage,
-                    style = MaterialTheme.typography.bodySmall,
-                    overflow = TextOverflow.Ellipsis,
-                    maxLines = 1,
-                    modifier = Modifier.constrainAs(lastMessageRef) {
+                Message(
+                    chat = this@with,
+                    modifier = Modifier.Companion.constrainAs(lastMessageRef) {
                         start.linkTo(personNameRef.start)
                         top.linkTo(personNameRef.bottom, margin = VerticalSpacing)
                         end.linkTo(
-                            if (unreadMessages > 0) unreadBadgeRef.start else parent.end,
+                            if (showUnreadBadge) unreadBadgeRef.start else parent.end,
                             margin = HorizontalSpacing
                         )
                         width = Dimension.fillToConstraints
@@ -77,7 +77,7 @@ fun ChatItem(chat: Chat, modifier: Modifier = Modifier) {
                         top.linkTo(parent.top)
                     }
                 )
-                if (unreadMessages > 0) {
+                if (showUnreadBadge) {
                     Badge(modifier = Modifier.constrainAs(unreadBadgeRef) {
                         end.linkTo(parent.end)
                         bottom.linkTo(parent.bottom)
@@ -88,6 +88,38 @@ fun ChatItem(chat: Chat, modifier: Modifier = Modifier) {
             }
         }
     }
+}
+
+@Composable
+private fun Message(
+    chat: Chat,
+    modifier: Modifier = Modifier,
+) {
+    val text: String
+    val fontStyle: FontStyle
+
+    with(chat) {
+        when {
+            chat.isTyping -> {
+                text = stringResource(R.string.is_typing, personName)
+                fontStyle = FontStyle.Italic
+            }
+
+            else -> {
+                text = lastMessage
+                fontStyle = FontStyle.Normal
+            }
+        }
+    }
+
+    Text(
+        modifier = modifier,
+        text = text,
+        style = MaterialTheme.typography.bodySmall,
+        fontStyle = fontStyle,
+        overflow = TextOverflow.Ellipsis,
+        maxLines = 1
+    )
 }
 
 @Composable
@@ -145,7 +177,7 @@ private class SampleChatProvider : PreviewParameterProvider<Chat> {
                 personPictureUrl = "",
                 personName = "Letícia Lucena",
                 lastMessage = "Você viu o que aconteceu? Estou muito preocupada!",
-                isTyping = false,
+                isTyping = true,
                 lastMessageTime = LocalDateTime.now(),
                 unreadMessages = 0
             )

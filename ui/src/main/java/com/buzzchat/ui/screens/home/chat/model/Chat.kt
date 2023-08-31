@@ -8,5 +8,8 @@ data class Chat(
     val lastMessage: String,
     val isTyping: Boolean,
     val lastMessageTime: LocalDateTime,
-    val unreadMessages: Int
-)
+    val unreadMessages: Int,
+) {
+    val showUnreadBadge: Boolean
+        get() = unreadMessages > 0
+}
