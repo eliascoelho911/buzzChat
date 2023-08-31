@@ -1,5 +1,6 @@
 package com.buzzchat.ui.screens.home.chat
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Badge
@@ -7,7 +8,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -21,8 +24,9 @@ import com.buzzchat.ui.components.common.ProfilePlaceholder
 import com.buzzchat.ui.previews.LightDarkPreview
 import com.buzzchat.ui.screens.home.chat.model.Chat
 import com.buzzchat.ui.theme.BuzzChatTheme
-import com.eliascoelho911.common.date.formatToHours
+import com.eliascoelho911.common.date.simpleFormat
 import org.joda.time.LocalDateTime
+import java.util.Locale
 
 @Composable
 fun ChatItem(chat: Chat, modifier: Modifier = Modifier) {
@@ -63,7 +67,7 @@ fun ChatItem(chat: Chat, modifier: Modifier = Modifier) {
                     }
                 )
                 Text(
-                    text = lastMessageTime.formatToHours(),
+                    text = lastMessageTime.simpleFormat(LocalConfiguration.current.locales[0]),
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.constrainAs(lastMessageTimeRef) {
                         end.linkTo(parent.end)
@@ -110,11 +114,16 @@ private val HorizontalSpacing = 16.dp
 @LightDarkPreview
 @Composable
 private fun ChatItemPreview(@PreviewParameter(SampleChatProvider::class) chat: Chat) {
-    BuzzChatTheme {
-        ChatItem(
-            modifier = Modifier.width(300.dp),
-            chat = chat
-        )
+    val configuration = Configuration().apply {
+        setLocale(Locale("pt", "BR"))
+    }
+    CompositionLocalProvider(LocalConfiguration provides configuration) {
+        BuzzChatTheme {
+            ChatItem(
+                modifier = Modifier.width(300.dp),
+                chat = chat
+            )
+        }
     }
 }
 
