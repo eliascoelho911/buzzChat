@@ -17,11 +17,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.buzzchat.ui.R
-import com.buzzchat.ui.previews.LightDarkPreview
-import com.buzzchat.ui.screens.home.chat.ChatItem
-import com.buzzchat.ui.screens.home.chat.model.Chat
-import com.buzzchat.ui.theme.BuzzChatTheme
-import org.joda.time.LocalDateTime
+import com.buzzchat.ui.screens.home.components.chatitem.ChatItem
 
 @Composable
 fun HomeScreen(
@@ -48,7 +44,7 @@ fun HomeScreen(
                 ) {
                     items(chats) { chat ->
                         ChatItem(
-                            chat = chat,
+                            state = chat,
                             modifier = Modifier.fillParentMaxWidth(),
                             onClick = state::onChatClicked
                         )
@@ -65,29 +61,4 @@ private fun HomeTopBar(title: String, scrollBehavior: TopAppBarScrollBehavior) {
         title = { Text(text = title) },
         scrollBehavior = scrollBehavior
     )
-}
-
-@LightDarkPreview
-@Composable
-private fun HomeScreenPreview() {
-    BuzzChatTheme {
-        HomeScreen(
-            state = HomeScreenState(
-                viewModel = HomeScreenViewModel(
-                    getAllChats = {
-                        List(8) {
-                            Chat(
-                                personPictureUrl = "",
-                                personName = "Elias Coelho",
-                                lastMessage = "Olá, tudo bem? Como está a sua família? Estou com saudades de vocês.",
-                                lastMessageTime = LocalDateTime.now().minusDays(it),
-                                unreadMessages = 0,
-                                isTyping = false
-                            )
-                        }.sortedByDescending { it.lastMessageTime }
-                    }
-                )
-            )
-        )
-    }
 }

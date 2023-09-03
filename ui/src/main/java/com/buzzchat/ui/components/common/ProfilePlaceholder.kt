@@ -16,7 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.buzzchat.ui.R
-import com.buzzchat.ui.previews.LightDarkPreview
+import com.buzzchat.ui.previews.annotations.LightDarkPreview
 import com.buzzchat.ui.theme.BuzzChatTheme
 
 @Composable
