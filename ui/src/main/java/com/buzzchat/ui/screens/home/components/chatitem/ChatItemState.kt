@@ -1,8 +1,8 @@
 package com.buzzchat.ui.screens.home.components.chatitem
 
 import androidx.compose.runtime.Immutable
-import com.buzzchat.ui.stubs.chat.model.Chat
-import com.buzzchat.ui.stubs.chat.model.PrivateChat
+import com.buzzchat.ui.features.chat.model.Chat
+import com.buzzchat.ui.features.chat.model.PrivateChat
 
 @Immutable
 data class ChatItemState(
