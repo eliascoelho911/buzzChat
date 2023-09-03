@@ -1,4 +1,4 @@
-package com.buzzchat.ui.previews
+package com.buzzchat.ui.previews.annotations
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
