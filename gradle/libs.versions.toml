@@ -51,6 +51,8 @@ jodaTime = { group = "joda-time", name = "joda-time", version = "2.10.13" }
 # Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+kotlinTest = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
+mockk = { group = "io.mockk", name = "mockk", version = "1.13.7" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

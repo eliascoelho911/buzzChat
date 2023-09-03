@@ -1,9 +1,11 @@
 package com.buzzchat.ui.screens.home
 
+import com.buzzchat.ui.features.chat.usecases.GetAllChatsUseCase
+import com.buzzchat.ui.screens.home.components.chatitem.toState
 import com.eliascoelho911.common.android.arch.StateViewModel
 
 class HomeScreenViewModel(
-    private val getAllChats: GetAllChats,
+    private val getAllChats: GetAllChatsUseCase,
 ) : StateViewModel<HomeState>(HomeState()) {
 
     init {
@@ -11,6 +13,6 @@ class HomeScreenViewModel(
     }
 
     private fun onInit() {
-        setState { it.copy(chats = getAllChats()) }
+        setState { it.copy(chats = getAllChats().toState()) }
     }
 }

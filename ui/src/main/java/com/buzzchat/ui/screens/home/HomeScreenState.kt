@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.buzzchat.ui.screens.home.chat.model.Chat
+import com.buzzchat.ui.screens.home.components.chatitem.ChatItemState
 
 @Stable
 class HomeScreenState(
@@ -12,12 +12,12 @@ class HomeScreenState(
 ) {
     val state: HomeState @Composable get() = viewModel.state.collectAsStateWithLifecycle().value
 
-    fun onChatClicked(chat: Chat) {
+    fun onChatClicked() {
         // TODO: Implement
     }
 }
 
 @Immutable
 data class HomeState(
-    val chats: List<Chat> = emptyList(),
+    val chats: List<ChatItemState> = emptyList(),
 )

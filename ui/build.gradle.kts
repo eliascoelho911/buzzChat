@@ -52,4 +52,6 @@ dependencies {
     implementation(project(":common"))
 
     testImplementation(libs.junit)
+    testImplementation(libs.kotlinTest)
+    testImplementation(libs.mockk)
 }
