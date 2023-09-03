@@ -1,8 +1,8 @@
 package com.buzzchat.ui.screens.home.components.chatitem
 
-import com.buzzchat.ui.stubs.chat.model.Message
-import com.buzzchat.ui.stubs.chat.model.PrivateChat
-import com.buzzchat.ui.stubs.user.model.User
+import com.buzzchat.ui.features.chat.model.Message
+import com.buzzchat.ui.features.chat.model.PrivateChat
+import com.buzzchat.ui.features.user.model.User
 import org.junit.Test
 import kotlin.test.assertEquals
 
