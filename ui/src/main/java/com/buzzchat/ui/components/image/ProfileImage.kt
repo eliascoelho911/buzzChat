@@ -1,7 +1,8 @@
-package com.buzzchat.ui.components.common
+package com.buzzchat.ui.components.image
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
@@ -12,17 +13,33 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.SubcomposeAsyncImage
+import coil.request.ImageRequest
 import com.buzzchat.ui.R
-import com.buzzchat.ui.previews.annotations.LightDarkPreview
-import com.buzzchat.ui.theme.BuzzChatTheme
 
 @Composable
-fun ProfilePlaceholder(
+fun ProfileImage(url: String, modifier: Modifier = Modifier) {
+    val profileModifier = modifier.then(Modifier.size(48.dp))
+    SubcomposeAsyncImage(
+        modifier = profileModifier,
+        model = ImageRequest.Builder(LocalContext.current).data(url).crossfade(true).build(),
+        contentDescription = null,
+        loading = {
+            ProfilePlaceholder(profileModifier)
+        },
+        error = {
+            ProfilePlaceholder(profileModifier)
+        }
+    )
+}
+
+@Composable
+private fun ProfilePlaceholder(
     modifier: Modifier = Modifier,
-    iconSize: Dp = 24.dp,
     backgroundColor: Color = MaterialTheme.colorScheme.surfaceVariant,
     contentColor: Color = contentColorFor(backgroundColor),
 ) {
@@ -34,7 +51,9 @@ fun ProfilePlaceholder(
     ) {
         Box(contentAlignment = Alignment.Center) {
             Image(
-                modifier = Modifier.size(iconSize),
+                modifier = Modifier
+                    .matchParentSize()
+                    .padding(8.dp),
                 painter = painterResource(id = R.drawable.ic_person),
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(contentColor)
@@ -43,10 +62,8 @@ fun ProfilePlaceholder(
     }
 }
 
-@LightDarkPreview
+@Preview
 @Composable
-fun ProfilePlaceholderPreview() {
-    BuzzChatTheme {
-        ProfilePlaceholder()
-    }
+private fun ProfileImagePreview() {
+    ProfileImage(url = "")
 }
