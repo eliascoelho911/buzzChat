@@ -1,7 +1,6 @@
 package com.buzzchat.ui.screens.home.components.chatitem
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Badge
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -9,17 +8,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
-import coil.compose.SubcomposeAsyncImage
-import coil.request.ImageRequest
 import com.buzzchat.ui.R
-import com.buzzchat.ui.components.common.ProfilePlaceholder
+import com.buzzchat.ui.components.image.ProfileImage
 import com.eliascoelho911.common.date.localDateTime
 import com.eliascoelho911.common.date.simpleFormat
 
@@ -127,24 +123,8 @@ private fun Message(
 
 @Composable
 private fun Picture(url: String, modifier: Modifier = Modifier) {
-    @Composable
-    fun Placeholder() {
-        ProfilePlaceholder(modifier = Modifier.size(ImageSize), iconSize = 36.dp)
-    }
-
-    SubcomposeAsyncImage(
-        modifier = modifier,
-        model = ImageRequest.Builder(LocalContext.current).data(url).crossfade(true).build(),
-        contentDescription = null,
-        loading = {
-            Placeholder()
-        },
-        error = {
-            Placeholder()
-        }
-    )
+    ProfileImage(url = url, modifier = modifier)
 }
 
-private val ImageSize = 48.dp
 private val VerticalSpacing = 8.dp
 private val HorizontalSpacing = 16.dp

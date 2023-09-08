@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
@@ -30,14 +31,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.buzzchat.ui.R
-import com.buzzchat.ui.previews.LightDarkPreview
+import com.buzzchat.ui.previews.annotations.LightDarkPreview
 import com.buzzchat.ui.theme.BuzzChatTheme
 
 @Composable
 fun ChatScreen(
     personName: String,
     personImage: Painter,
-    state: ChatScreenState,
+    screenState: ChatScreenState,
 ) {
     val scrollBehaviour = pinnedScrollBehavior()
 
@@ -47,7 +48,7 @@ fun ChatScreen(
                 personName = personName,
                 personImage = personImage,
                 scrollBehavior = scrollBehaviour,
-                onBackClick = state::onBackClick,
+                onBackClick = screenState::onBackClick,
             )
         },
         modifier = Modifier.nestedScroll(scrollBehaviour.nestedScrollConnection)
@@ -55,9 +56,18 @@ fun ChatScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding),
+                .padding(padding)
         ) {
-
+            LazyColumn(modifier = Modifier.nestedScroll(scrollBehaviour.nestedScrollConnection)) {
+//                items(screenState.state.messages) { message ->
+//                    Text(
+//                        text = message,
+//                        style = MaterialTheme.typography.bodyMedium,
+//                        maxLines = 1,
+//                        overflow = TextOverflow.Ellipsis,
+//                    )
+//                }
+            }
         }
     }
 }
@@ -108,7 +118,7 @@ private fun ChatScreenPreview() {
         ChatScreen(
             personName = "Elias Coelho",
             personImage = painterResource(id = R.drawable.person_image),
-            state = ChatScreenState(ChatViewModel()),
+            screenState = ChatScreenState(ChatViewModel()),
         )
     }
 }
