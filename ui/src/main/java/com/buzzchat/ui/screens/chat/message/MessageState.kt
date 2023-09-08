@@ -12,15 +12,17 @@ data class MessageState(
 
 @Immutable
 sealed interface MessageSender {
+    val avatarUrl: String
+
     @Immutable
     data class Me(
-        val avatarUrl: String,
+        override val avatarUrl: String,
     ) : MessageSender
 
     @Immutable
     data class Other(
         val name: String?,
-        val avatarUrl: String,
+        override val avatarUrl: String,
     ) : MessageSender
 }
 
@@ -33,5 +35,5 @@ sealed interface MessageContent {
 enum class DeliveryStatus {
     SENT,
     DELIVERED,
-    SEEN,
+    READ,
 }
