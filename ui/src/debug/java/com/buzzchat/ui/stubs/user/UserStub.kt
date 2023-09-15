@@ -2,36 +2,40 @@ package com.buzzchat.ui.stubs.user
 
 import com.buzzchat.ui.features.user.model.User
 import com.eliascoelho911.common.general.generateId
+import kotlin.random.Random
 
 object UserStub {
     fun getUsers(): List<User> = listOf(
         User(
-            id = generateId(),
-            name = "Lucas Ribeiro",
+            username = generateId(),
+            fullName = "Lucas Ribeiro",
             avatarUrl = ""
         ),
         User(
-            id = generateId(),
-            name = "João Pedro",
+            username = generateId(),
+            fullName = "João Pedro",
             avatarUrl = ""
         ),
         User(
-            id = generateId(),
-            name = "Maria Eduarda",
+            username = generateId(),
+            fullName = "Maria Eduarda",
             avatarUrl = ""
         ),
         User(
-            id = generateId(),
-            name = "Ana Clara",
+            username = generateId(),
+            fullName = "Ana Clara",
             avatarUrl = ""
         ),
     )
 
     fun getRandomUser(): User = getUsers().random()
 
+    fun getRandomUsers(): List<User> =
+        getUsers().shuffled().take(Random.nextInt(1, getUsers().size))
+
     fun getLoggedUser(): User = User(
-        id = generateId(),
-        name = "Elias Coelho",
+        username = generateId(),
+        fullName = "Elias Coelho",
         avatarUrl = ""
     )
 }

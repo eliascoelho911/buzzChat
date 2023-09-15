@@ -27,10 +27,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.buzzchat.ui.R
 import com.buzzchat.ui.previews.annotations.LightDarkPreview
 import com.buzzchat.ui.theme.BuzzChatTheme
 
@@ -115,10 +113,10 @@ private fun ChatTopBar(
 @Composable
 private fun ChatScreenPreview() {
     BuzzChatTheme {
-        ChatScreen(
-            personName = "Elias Coelho",
-            personImage = painterResource(id = R.drawable.person_image),
-            screenState = ChatScreenState(ChatViewModel()),
-        )
+//        ChatScreen(
+//            personName = "Elias Coelho",
+//            personImage = painterResource(id = R.drawable.person_image),
+//            screenState = ChatScreenState(ChatViewModel()),
+//        )
     }
 }

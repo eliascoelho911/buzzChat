@@ -5,7 +5,13 @@ import com.buzzchat.ui.features.chat.repository.ChatRepository
 import com.buzzchat.ui.stubs.chat.ChatGenerator
 
 class MockChatRepository : ChatRepository {
-    override fun getAllChats(): List<Chat> = listOf(
-        ChatGenerator.privateChat(messages = 10)
+    override suspend fun getAllChats(): Result<List<Chat>> = Result.success(
+        listOf(
+            ChatGenerator.privateChat(messages = 10)
+        )
     )
+
+    override suspend fun getChatById(id: String): Result<Chat> = runCatching {
+        getAllChats().getOrThrow().first { it.id == id }
+    }
 }

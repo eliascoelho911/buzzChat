@@ -1,7 +1,7 @@
 package com.buzzchat.ui.screens.home.components.chatitem
 
+import com.buzzchat.ui.features.chat.model.Chat
 import com.buzzchat.ui.features.chat.model.Message
-import com.buzzchat.ui.features.chat.model.PrivateChat
 import com.buzzchat.ui.features.user.model.User
 import org.junit.Test
 import kotlin.test.assertEquals
@@ -9,17 +9,17 @@ import kotlin.test.assertEquals
 class ChatItemStateKtTest {
 
     private val loggedUser = User(
-        id = "user0",
-        name = "User 0",
+        username = "user0",
+        fullName = "User 0",
         avatarUrl = "",
     )
     private val otherUser = User(
-        id = "user1",
-        name = "User 1",
+        username = "user1",
+        fullName = "User 1",
         avatarUrl = "",
     )
 
-    private val chat = PrivateChat(
+    private val chat = Chat(
         id = "chat0",
         messages = listOf(
             Message(
@@ -57,7 +57,7 @@ class ChatItemStateKtTest {
         val expected = ChatItemState(
             id = chat.id,
             avatarUrl = otherUser.avatarUrl,
-            personName = otherUser.name,
+            chatName = otherUser.fullName,
             lastMessage = chat.messages.last().content,
             lastMessageMillis = chat.messages.last().createAt,
             unreadMessages = 1,

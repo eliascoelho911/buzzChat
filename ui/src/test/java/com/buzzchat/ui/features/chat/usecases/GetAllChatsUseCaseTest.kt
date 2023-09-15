@@ -2,7 +2,6 @@ package com.buzzchat.ui.features.chat.usecases
 
 import com.buzzchat.ui.features.chat.model.Chat
 import com.buzzchat.ui.features.chat.model.Message
-import com.buzzchat.ui.features.chat.model.PrivateChat
 import com.buzzchat.ui.features.chat.repository.ChatRepository
 import com.eliascoelho911.common.date.getMillis
 import com.eliascoelho911.common.general.generateId
@@ -35,7 +34,7 @@ class GetAllChatsUseCaseTest {
         isDelivered = true
     )
 
-    private val chatWithYesterdayMessage: Chat = PrivateChat(
+    private val chatWithYesterdayMessage: Chat = Chat(
         id = generateId(),
         loggedUser = mockk(),
         otherUser = mockk(),
@@ -43,7 +42,7 @@ class GetAllChatsUseCaseTest {
         messages = listOf(yesterdayMessage)
     )
 
-    private val chatWithTodayMessage: Chat = PrivateChat(
+    private val chatWithTodayMessage: Chat = Chat(
         id = generateId(),
         loggedUser = mockk(),
         otherUser = mockk(),
@@ -51,7 +50,7 @@ class GetAllChatsUseCaseTest {
         messages = listOf(todayMessage)
     )
 
-    private val chatWithoutMessages: Chat = PrivateChat(
+    private val chatWithoutMessages: Chat = Chat(
         id = generateId(),
         loggedUser = mockk(),
         otherUser = mockk(),

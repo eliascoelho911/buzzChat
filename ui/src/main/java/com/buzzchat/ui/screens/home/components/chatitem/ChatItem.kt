@@ -37,7 +37,7 @@ fun ChatItem(
                 })
 
                 Text(
-                    text = personName,
+                    text = chatName,
                     style = MaterialTheme.typography.titleSmall,
                     modifier = Modifier.constrainAs(personNameRef) {
                         start.linkTo(
@@ -100,7 +100,7 @@ private fun Message(
     with(chat) {
         when {
             chat.isTyping -> {
-                text = stringResource(R.string.is_typing, personName)
+                text = stringResource(R.string.is_typing, chatName)
                 fontStyle = FontStyle.Italic
             }
 
