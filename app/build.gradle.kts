@@ -1,5 +1,3 @@
-import com.google.samples.apps.nowinandroid.BuzzChatBuildType
-
 plugins {
     id("nowinandroid.android.application")
     id("nowinandroid.android.application.compose")
@@ -21,11 +19,11 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix = BuzzChatBuildType.DEBUG.applicationIdSuffix
+            applicationIdSuffix = com.buzzchat.BuzzChatBuildType.DEBUG.applicationIdSuffix
         }
         release {
             isMinifyEnabled = true
-            applicationIdSuffix = BuzzChatBuildType.RELEASE.applicationIdSuffix
+            applicationIdSuffix = com.buzzchat.BuzzChatBuildType.RELEASE.applicationIdSuffix
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

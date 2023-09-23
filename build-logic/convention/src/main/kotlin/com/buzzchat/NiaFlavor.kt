@@ -1,4 +1,4 @@
-package com.google.samples.apps.nowinandroid
+package com.buzzchat
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.ApplicationProductFlavor

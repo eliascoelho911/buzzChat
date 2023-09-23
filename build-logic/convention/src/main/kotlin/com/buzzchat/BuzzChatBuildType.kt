@@ -1,4 +1,4 @@
-package com.google.samples.apps.nowinandroid
+package com.buzzchat
 
 enum class BuzzChatBuildType(val applicationIdSuffix: String? = null) {
     DEBUG(".debug"),

@@ -16,11 +16,11 @@
 
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
-import com.google.samples.apps.nowinandroid.configureFlavors
-import com.google.samples.apps.nowinandroid.configureGradleManagedDevices
-import com.google.samples.apps.nowinandroid.configureKotlinAndroid
-import com.google.samples.apps.nowinandroid.configurePrintApksTask
-import com.google.samples.apps.nowinandroid.disableUnnecessaryAndroidTests
+import com.buzzchat.configureFlavors
+import com.buzzchat.configureGradleManagedDevices
+import com.buzzchat.configureKotlinAndroid
+import com.buzzchat.configurePrintApksTask
+import com.buzzchat.disableUnnecessaryAndroidTests
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

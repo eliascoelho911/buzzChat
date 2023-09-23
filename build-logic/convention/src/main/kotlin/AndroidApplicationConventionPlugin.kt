@@ -16,9 +16,9 @@
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.google.samples.apps.nowinandroid.configureGradleManagedDevices
-import com.google.samples.apps.nowinandroid.configureKotlinAndroid
-import com.google.samples.apps.nowinandroid.configurePrintApksTask
+import com.buzzchat.configureGradleManagedDevices
+import com.buzzchat.configureKotlinAndroid
+import com.buzzchat.configurePrintApksTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
