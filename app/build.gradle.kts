@@ -1,18 +1,17 @@
+import com.google.samples.apps.nowinandroid.BuzzChatBuildType
+
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id("nowinandroid.android.application")
+    id("nowinandroid.android.application.compose")
 }
 
 android {
-    namespace = "com.buzzchat.android"
-    compileSdk = 34
+    namespace = "com.buzzchat"
 
     defaultConfig {
-        applicationId = "com.buzzchat.android"
-        compileSdk = 24
-        targetSdk = 34
+        applicationId = "com.buzzchat"
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -21,35 +20,42 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
+        debug {
+            applicationIdSuffix = BuzzChatBuildType.DEBUG.applicationIdSuffix
+        }
+        release {
+            isMinifyEnabled = true
+            applicationIdSuffix = BuzzChatBuildType.RELEASE.applicationIdSuffix
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+
+    packaging {
+        resources {
+            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+        }
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
 }
 
 dependencies {
-    implementation(libs.androidx.coreKtx)
+    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.appcompat)
-
-    implementation(libs.compose.ui)
-    implementation(libs.compose.uiToolingPreview)
-    implementation(libs.compose.activity)
-    debugImplementation(libs.compose.uiTooling)
-    debugImplementation(libs.compose.uiTestManifest)
-
-    implementation(project(":data-domain"))
-    implementation(project(":ui"))
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.androidx.compose.material3.windowSizeClass)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.window.manager)
+    implementation(libs.coil.kt)
+//    implementation(project(":data-domain"))
+//    implementation(project(":ui"))
 }

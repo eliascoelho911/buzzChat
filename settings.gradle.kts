@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         gradlePluginPortal()
@@ -7,6 +8,7 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -16,6 +18,6 @@ dependencyResolutionManagement {
 rootProject.name = "buzzChat"
 
 include(":app")
-include(":data-domain")
-include(":ui")
-include(":common")
+//include(":data-domain")
+//include(":ui")
+//include(":common")
