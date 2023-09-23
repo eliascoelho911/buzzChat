@@ -1,6 +1,6 @@
 plugins {
-    id("nowinandroid.android.application")
-    id("nowinandroid.android.application.compose")
+    id("buzzchat.android.application")
+    id("buzzchat.android.application.compose")
 }
 
 android {
