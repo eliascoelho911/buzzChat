@@ -20,3 +20,6 @@ rootProject.name = "buzzChat"
 include(":app")
 include(":core:usecases")
 include(":core:model")
+include(":core:designsystem")
+include(":core:testing")
+include(":core:common")
