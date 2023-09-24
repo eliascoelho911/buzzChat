@@ -18,6 +18,5 @@ dependencyResolutionManagement {
 rootProject.name = "buzzChat"
 
 include(":app")
-//include(":ui")
-//include(":common")
 include(":core:usecases")
+include(":core:model")
