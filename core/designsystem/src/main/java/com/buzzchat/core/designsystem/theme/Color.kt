@@ -1,5 +1,6 @@
 package com.buzzchat.core.designsystem.theme
 
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -566,3 +567,6 @@ fun BuzzChatColorScheme.contentColorFor(backgroundColor: Color): Color =
 val LocalBuzzChatColorScheme = staticCompositionLocalOf {
     lightBuzzChatColorScheme()
 }
+
+@Composable
+fun buzzChatColorScheme(): BuzzChatColorScheme = LocalBuzzChatColorScheme.current
