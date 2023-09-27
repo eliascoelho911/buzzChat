@@ -1,7 +1,10 @@
 package com.buzzchat.core.designsystem.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Stable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
 val md_theme_light_primary = Color(0xFF506600)
@@ -158,164 +161,408 @@ val dark_onGoldenrod = Color(0xFF442B00)
 val dark_GoldenrodContainer = Color(0xFF614000)
 val dark_onGoldenrodContainer = Color(0xFFFFDDB1)
 
-object BuzzChatColors {
-    @Composable
-    fun electricBlue(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_ElectricBlue else light_ElectricBlue
+@Stable
+class BuzzChatColorScheme(
+    electricBlue: Color,
+    onElectricBlue: Color,
+    electricBlueContainer: Color,
+    onElectricBlueContainer: Color,
+    mintGreen: Color,
+    onMintGreen: Color,
+    mintGreenContainer: Color,
+    onMintGreenContainer: Color,
+    royalPurple: Color,
+    onRoyalPurple: Color,
+    royalPurpleContainer: Color,
+    onRoyalPurpleContainer: Color,
+    deepRuby: Color,
+    onDeepRuby: Color,
+    deepRubyContainer: Color,
+    onDeepRubyContainer: Color,
+    brilliantTurquoise: Color,
+    onBrilliantTurquoise: Color,
+    brilliantTurquoiseContainer: Color,
+    onBrilliantTurquoiseContainer: Color,
+    slateBlue: Color,
+    onSlateBlue: Color,
+    slateBlueContainer: Color,
+    onSlateBlueContainer: Color,
+    darkMagenta: Color,
+    onDarkMagenta: Color,
+    darkMagentaContainer: Color,
+    onDarkMagentaContainer: Color,
+    jungleGreen: Color,
+    onJungleGreen: Color,
+    jungleGreenContainer: Color,
+    onJungleGreenContainer: Color,
+    emeraldGreen: Color,
+    onEmeraldGreen: Color,
+    emeraldGreenContainer: Color,
+    onEmeraldGreenContainer: Color,
+    goldenrod: Color,
+    onGoldenrod: Color,
+    goldenrodContainer: Color,
+    onGoldenrodContainer: Color,
+) {
+    var electricBlue by mutableStateOf(electricBlue)
+        private set
 
-    @Composable
-    fun onElectricBlue(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onElectricBlue else light_onElectricBlue
+    var onElectricBlue by mutableStateOf(onElectricBlue)
+        private set
 
-    @Composable
-    fun electricBlueContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_ElectricBlueContainer else light_ElectricBlueContainer
+    var electricBlueContainer by mutableStateOf(electricBlueContainer)
+        private set
 
-    @Composable
-    fun onElectricBlueContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onElectricBlueContainer else light_onElectricBlueContainer
+    var onElectricBlueContainer by mutableStateOf(onElectricBlueContainer)
+        private set
 
-    @Composable
-    fun mintGreen(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_MintGreen else light_MintGreen
+    var mintGreen by mutableStateOf(mintGreen)
+        private set
 
-    @Composable
-    fun onMintGreen(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onMintGreen else light_onMintGreen
+    var onMintGreen by mutableStateOf(onMintGreen)
+        private set
 
-    @Composable
-    fun mintGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_MintGreenContainer else light_MintGreenContainer
+    var mintGreenContainer by mutableStateOf(mintGreenContainer)
+        private set
 
-    @Composable
-    fun onMintGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onMintGreenContainer else light_onMintGreenContainer
+    var onMintGreenContainer by mutableStateOf(onMintGreenContainer)
+        private set
 
-    @Composable
-    fun royalPurple(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_RoyalPurple else light_RoyalPurple
+    var royalPurple by mutableStateOf(royalPurple)
+        private set
 
-    @Composable
-    fun onRoyalPurple(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onRoyalPurple else light_onRoyalPurple
+    var onRoyalPurple by mutableStateOf(onRoyalPurple)
+        private set
 
-    @Composable
-    fun royalPurpleContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_RoyalPurpleContainer else light_RoyalPurpleContainer
+    var royalPurpleContainer by mutableStateOf(royalPurpleContainer)
+        private set
 
-    @Composable
-    fun onRoyalPurpleContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onRoyalPurpleContainer else light_onRoyalPurpleContainer
+    var onRoyalPurpleContainer by mutableStateOf(onRoyalPurpleContainer)
+        private set
 
-    @Composable
-    fun deepRuby(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_DeepRuby else light_DeepRuby
+    var deepRuby by mutableStateOf(deepRuby)
+        private set
 
-    @Composable
-    fun onDeepRuby(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onDeepRuby else light_onDeepRuby
+    var onDeepRuby by mutableStateOf(onDeepRuby)
+        private set
 
-    @Composable
-    fun deepRubyContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_DeepRubyContainer else light_DeepRubyContainer
+    var deepRubyContainer by mutableStateOf(deepRubyContainer)
+        private set
 
-    @Composable
-    fun onDeepRubyContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onDeepRubyContainer else light_onDeepRubyContainer
+    var onDeepRubyContainer by mutableStateOf(onDeepRubyContainer)
+        private set
 
-    @Composable
-    fun brilliantTurquoise(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_BrilliantTurquoise else light_BrilliantTurquoise
+    var brilliantTurquoise by mutableStateOf(brilliantTurquoise)
+        private set
 
-    @Composable
-    fun onBrilliantTurquoise(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onBrilliantTurquoise else light_onBrilliantTurquoise
+    var onBrilliantTurquoise by mutableStateOf(onBrilliantTurquoise)
+        private set
 
-    @Composable
-    fun brilliantTurquoiseContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_BrilliantTurquoiseContainer else light_BrilliantTurquoiseContainer
+    var brilliantTurquoiseContainer by mutableStateOf(brilliantTurquoiseContainer)
+        private set
 
-    @Composable
-    fun onBrilliantTurquoiseContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onBrilliantTurquoiseContainer else light_onBrilliantTurquoiseContainer
+    var onBrilliantTurquoiseContainer by mutableStateOf(onBrilliantTurquoiseContainer)
+        private set
 
-    @Composable
-    fun slateBlue(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_SlateBlue else light_SlateBlue
+    var slateBlue by mutableStateOf(slateBlue)
+        private set
 
-    @Composable
-    fun onSlateBlue(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onSlateBlue else light_onSlateBlue
+    var onSlateBlue by mutableStateOf(onSlateBlue)
+        private set
 
-    @Composable
-    fun slateBlueContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_SlateBlueContainer else light_SlateBlueContainer
+    var slateBlueContainer by mutableStateOf(slateBlueContainer)
+        private set
 
-    @Composable
-    fun onSlateBlueContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onSlateBlueContainer else light_onSlateBlueContainer
+    var onSlateBlueContainer by mutableStateOf(onSlateBlueContainer)
+        private set
 
-    @Composable
-    fun darkMagenta(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_DarkMagenta else light_DarkMagenta
+    var darkMagenta by mutableStateOf(darkMagenta)
+        private set
 
-    @Composable
-    fun onDarkMagenta(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onDarkMagenta else light_onDarkMagenta
+    var onDarkMagenta by mutableStateOf(onDarkMagenta)
+        private set
 
-    @Composable
-    fun darkMagentaContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_DarkMagentaContainer else light_DarkMagentaContainer
+    var darkMagentaContainer by mutableStateOf(darkMagentaContainer)
+        private set
 
-    @Composable
-    fun onDarkMagentaContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onDarkMagentaContainer else light_onDarkMagentaContainer
+    var onDarkMagentaContainer by mutableStateOf(onDarkMagentaContainer)
+        private set
 
-    @Composable
-    fun jungleGreen(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_JungleGreen else light_JungleGreen
+    var jungleGreen by mutableStateOf(jungleGreen)
+        private set
 
-    @Composable
-    fun onJungleGreen(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onJungleGreen else light_onJungleGreen
+    var onJungleGreen by mutableStateOf(onJungleGreen)
+        private set
 
-    @Composable
-    fun jungleGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_JungleGreenContainer else light_JungleGreenContainer
+    var jungleGreenContainer by mutableStateOf(jungleGreenContainer)
+        private set
 
-    @Composable
-    fun onJungleGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onJungleGreenContainer else light_onJungleGreenContainer
+    var onJungleGreenContainer by mutableStateOf(onJungleGreenContainer)
+        private set
 
-    @Composable
-    fun emeraldGreen(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_EmeraldGreen else light_EmeraldGreen
+    var emeraldGreen by mutableStateOf(emeraldGreen)
+        private set
 
-    @Composable
-    fun onEmeraldGreen(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onEmeraldGreen else light_onEmeraldGreen
+    var onEmeraldGreen by mutableStateOf(onEmeraldGreen)
+        private set
 
-    @Composable
-    fun emeraldGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_EmeraldGreenContainer else light_EmeraldGreenContainer
+    var emeraldGreenContainer by mutableStateOf(emeraldGreenContainer)
+        private set
 
-    @Composable
-    fun onEmeraldGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onEmeraldGreenContainer else light_onEmeraldGreenContainer
+    var onEmeraldGreenContainer by mutableStateOf(onEmeraldGreenContainer)
+        private set
 
-    @Composable
-    fun goldenrod(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_Goldenrod else light_Goldenrod
+    var goldenrod by mutableStateOf(goldenrod)
+        private set
 
-    @Composable
-    fun onGoldenrod(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onGoldenrod else light_onGoldenrod
+    var onGoldenrod by mutableStateOf(onGoldenrod)
+        private set
 
-    @Composable
-    fun goldenrodContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_GoldenrodContainer else light_GoldenrodContainer
+    var goldenrodContainer by mutableStateOf(goldenrodContainer)
+        private set
 
-    @Composable
-    fun onGoldenrodContainer(isDark: Boolean = isSystemInDarkTheme()) =
-        if (isDark) dark_onGoldenrodContainer else light_onGoldenrodContainer
+    var onGoldenrodContainer by mutableStateOf(onGoldenrodContainer)
+        private set
+
+    fun copy(
+        electricBlue: Color = this.electricBlue,
+        onElectricBlue: Color = this.onElectricBlue,
+        electricBlueContainer: Color = this.electricBlueContainer,
+        onElectricBlueContainer: Color = this.onElectricBlueContainer,
+        mintGreen: Color = this.mintGreen,
+        onMintGreen: Color = this.onMintGreen,
+        mintGreenContainer: Color = this.mintGreenContainer,
+        onMintGreenContainer: Color = this.onMintGreenContainer,
+        royalPurple: Color = this.royalPurple,
+        onRoyalPurple: Color = this.onRoyalPurple,
+        royalPurpleContainer: Color = this.royalPurpleContainer,
+        onRoyalPurpleContainer: Color = this.onRoyalPurpleContainer,
+        deepRuby: Color = this.deepRuby,
+        onDeepRuby: Color = this.onDeepRuby,
+        deepRubyContainer: Color = this.deepRubyContainer,
+        onDeepRubyContainer: Color = this.onDeepRubyContainer,
+        brilliantTurquoise: Color = this.brilliantTurquoise,
+        onBrilliantTurquoise: Color = this.onBrilliantTurquoise,
+        brilliantTurquoiseContainer: Color = this.brilliantTurquoiseContainer,
+        onBrilliantTurquoiseContainer: Color = this.onBrilliantTurquoiseContainer,
+        slateBlue: Color = this.slateBlue,
+        onSlateBlue: Color = this.onSlateBlue,
+        slateBlueContainer: Color = this.slateBlueContainer,
+        onSlateBlueContainer: Color = this.onSlateBlueContainer,
+        darkMagenta: Color = this.darkMagenta,
+        onDarkMagenta: Color = this.onDarkMagenta,
+        darkMagentaContainer: Color = this.darkMagentaContainer,
+        onDarkMagentaContainer: Color = this.onDarkMagentaContainer,
+        jungleGreen: Color = this.jungleGreen,
+        onJungleGreen: Color = this.onJungleGreen,
+        jungleGreenContainer: Color = this.jungleGreenContainer,
+        onJungleGreenContainer: Color = this.onJungleGreenContainer,
+        emeraldGreen: Color = this.emeraldGreen,
+        onEmeraldGreen: Color = this.onEmeraldGreen,
+        emeraldGreenContainer: Color = this.emeraldGreenContainer,
+        onEmeraldGreenContainer: Color = this.onEmeraldGreenContainer,
+        goldenrod: Color = this.goldenrod,
+        onGoldenrod: Color = this.onGoldenrod,
+        goldenrodContainer: Color = this.goldenrodContainer,
+        onGoldenrodContainer: Color = this.onGoldenrodContainer,
+    ): BuzzChatColorScheme = BuzzChatColorScheme(
+        electricBlue = electricBlue,
+        onElectricBlue = onElectricBlue,
+        electricBlueContainer = electricBlueContainer,
+        onElectricBlueContainer = onElectricBlueContainer,
+        mintGreen = mintGreen,
+        onMintGreen = onMintGreen,
+        mintGreenContainer = mintGreenContainer,
+        onMintGreenContainer = onMintGreenContainer,
+        royalPurple = royalPurple,
+        onRoyalPurple = onRoyalPurple,
+        royalPurpleContainer = royalPurpleContainer,
+        onRoyalPurpleContainer = onRoyalPurpleContainer,
+        deepRuby = deepRuby,
+        onDeepRuby = onDeepRuby,
+        deepRubyContainer = deepRubyContainer,
+        onDeepRubyContainer = onDeepRubyContainer,
+        brilliantTurquoise = brilliantTurquoise,
+        onBrilliantTurquoise = onBrilliantTurquoise,
+        brilliantTurquoiseContainer = brilliantTurquoiseContainer,
+        onBrilliantTurquoiseContainer = onBrilliantTurquoiseContainer,
+        slateBlue = slateBlue,
+        onSlateBlue = onSlateBlue,
+        slateBlueContainer = slateBlueContainer,
+        onSlateBlueContainer = onSlateBlueContainer,
+        darkMagenta = darkMagenta,
+        onDarkMagenta = onDarkMagenta,
+        darkMagentaContainer = darkMagentaContainer,
+        onDarkMagentaContainer = onDarkMagentaContainer,
+        jungleGreen = jungleGreen,
+        onJungleGreen = onJungleGreen,
+        jungleGreenContainer = jungleGreenContainer,
+        onJungleGreenContainer = onJungleGreenContainer,
+        emeraldGreen = emeraldGreen,
+        onEmeraldGreen = onEmeraldGreen,
+        emeraldGreenContainer = emeraldGreenContainer,
+        onEmeraldGreenContainer = onEmeraldGreenContainer,
+        goldenrod = goldenrod,
+        onGoldenrod = onGoldenrod,
+        goldenrodContainer = goldenrodContainer,
+        onGoldenrodContainer = onGoldenrodContainer,
+    )
+
+    override fun toString(): String {
+        return "BuzzChatColorScheme(" +
+            "electricBlue=$electricBlue, " +
+            "onElectricBlue=$onElectricBlue, " +
+            "electricBlueContainer=$electricBlueContainer, " +
+            "onElectricBlueContainer=$onElectricBlueContainer, " +
+            "mintGreen=$mintGreen, onMintGreen=$onMintGreen, " +
+            "mintGreenContainer=$mintGreenContainer, " +
+            "onMintGreenContainer=$onMintGreenContainer, " +
+            "royalPurple=$royalPurple, " +
+            "onRoyalPurple=$onRoyalPurple, " +
+            "royalPurpleContainer=$royalPurpleContainer, " +
+            "onRoyalPurpleContainer=$onRoyalPurpleContainer, " +
+            "deepRuby=$deepRuby, " +
+            "onDeepRuby=$onDeepRuby, " +
+            "deepRubyContainer=$deepRubyContainer, " +
+            "onDeepRubyContainer=$onDeepRubyContainer, " +
+            "brilliantTurquoise=$brilliantTurquoise, " +
+            "onBrilliantTurquoise=$onBrilliantTurquoise, " +
+            "brilliantTurquoiseContainer=$brilliantTurquoiseContainer, " +
+            "onBrilliantTurquoiseContainer=$onBrilliantTurquoiseContainer, " +
+            "slateBlue=$slateBlue, " +
+            "onSlateBlue=$onSlateBlue, " +
+            "slateBlueContainer=$slateBlueContainer, " +
+            "onSlateBlueContainer=$onSlateBlueContainer, " +
+            "darkMagenta=$darkMagenta, " +
+            "onDarkMagenta=$onDarkMagenta, " +
+            "darkMagentaContainer=$darkMagentaContainer, " +
+            "onDarkMagentaContainer=$onDarkMagentaContainer, " +
+            "jungleGreen=$jungleGreen, " +
+            "onJungleGreen=$onJungleGreen, " +
+            "jungleGreenContainer=$jungleGreenContainer, " +
+            "onJungleGreenContainer=$onJungleGreenContainer, " +
+            "emeraldGreen=$emeraldGreen, " +
+            "onEmeraldGreen=$onEmeraldGreen, " +
+            "emeraldGreenContainer=$emeraldGreenContainer, " +
+            "onEmeraldGreenContainer=$onEmeraldGreenContainer, " +
+            "goldenrod=$goldenrod, " +
+            "onGoldenrod=$onGoldenrod, " +
+            "goldenrodContainer=$goldenrodContainer, " +
+            "onGoldenrodContainer=$onGoldenrodContainer)"
+    }
+}
+
+fun lightBuzzChatColorScheme() = BuzzChatColorScheme(
+    electricBlue = light_ElectricBlue,
+    onElectricBlue = light_onElectricBlue,
+    electricBlueContainer = light_ElectricBlueContainer,
+    onElectricBlueContainer = light_onElectricBlueContainer,
+    mintGreen = light_MintGreen,
+    onMintGreen = light_onMintGreen,
+    mintGreenContainer = light_MintGreenContainer,
+    onMintGreenContainer = light_onMintGreenContainer,
+    royalPurple = light_RoyalPurple,
+    onRoyalPurple = light_onRoyalPurple,
+    royalPurpleContainer = light_RoyalPurpleContainer,
+    onRoyalPurpleContainer = light_onRoyalPurpleContainer,
+    deepRuby = light_DeepRuby,
+    onDeepRuby = light_onDeepRuby,
+    deepRubyContainer = light_DeepRubyContainer,
+    onDeepRubyContainer = light_onDeepRubyContainer,
+    brilliantTurquoise = light_BrilliantTurquoise,
+    onBrilliantTurquoise = light_onBrilliantTurquoise,
+    brilliantTurquoiseContainer = light_BrilliantTurquoiseContainer,
+    onBrilliantTurquoiseContainer = light_onBrilliantTurquoiseContainer,
+    slateBlue = light_SlateBlue,
+    onSlateBlue = light_onSlateBlue,
+    slateBlueContainer = light_SlateBlueContainer,
+    onSlateBlueContainer = light_onSlateBlueContainer,
+    darkMagenta = light_DarkMagenta,
+    onDarkMagenta = light_onDarkMagenta,
+    darkMagentaContainer = light_DarkMagentaContainer,
+    onDarkMagentaContainer = light_onDarkMagentaContainer,
+    jungleGreen = light_JungleGreen,
+    onJungleGreen = light_onJungleGreen,
+    jungleGreenContainer = light_JungleGreenContainer,
+    onJungleGreenContainer = light_onJungleGreenContainer,
+    emeraldGreen = light_EmeraldGreen,
+    onEmeraldGreen = light_onEmeraldGreen,
+    emeraldGreenContainer = light_EmeraldGreenContainer,
+    onEmeraldGreenContainer = light_onEmeraldGreenContainer,
+    goldenrod = light_Goldenrod,
+    onGoldenrod = light_onGoldenrod,
+    goldenrodContainer = light_GoldenrodContainer,
+    onGoldenrodContainer = light_onGoldenrodContainer
+)
+
+fun darkBuzzChatColorScheme() = BuzzChatColorScheme(
+    electricBlue = dark_ElectricBlue,
+    onElectricBlue = dark_onElectricBlue,
+    electricBlueContainer = dark_ElectricBlueContainer,
+    onElectricBlueContainer = dark_onElectricBlueContainer,
+    mintGreen = dark_MintGreen,
+    onMintGreen = dark_onMintGreen,
+    mintGreenContainer = dark_MintGreenContainer,
+    onMintGreenContainer = dark_onMintGreenContainer,
+    royalPurple = dark_RoyalPurple,
+    onRoyalPurple = dark_onRoyalPurple,
+    royalPurpleContainer = dark_RoyalPurpleContainer,
+    onRoyalPurpleContainer = dark_onRoyalPurpleContainer,
+    deepRuby = dark_DeepRuby,
+    onDeepRuby = dark_onDeepRuby,
+    deepRubyContainer = dark_DeepRubyContainer,
+    onDeepRubyContainer = dark_onDeepRubyContainer,
+    brilliantTurquoise = dark_BrilliantTurquoise,
+    onBrilliantTurquoise = dark_onBrilliantTurquoise,
+    brilliantTurquoiseContainer = dark_BrilliantTurquoiseContainer,
+    onBrilliantTurquoiseContainer = dark_onBrilliantTurquoiseContainer,
+    slateBlue = dark_SlateBlue,
+    onSlateBlue = dark_onSlateBlue,
+    slateBlueContainer = dark_SlateBlueContainer,
+    onSlateBlueContainer = dark_onSlateBlueContainer,
+    darkMagenta = dark_DarkMagenta,
+    onDarkMagenta = dark_onDarkMagenta,
+    darkMagentaContainer = dark_DarkMagentaContainer,
+    onDarkMagentaContainer = dark_onDarkMagentaContainer,
+    jungleGreen = dark_JungleGreen,
+    onJungleGreen = dark_onJungleGreen,
+    jungleGreenContainer = dark_JungleGreenContainer,
+    onJungleGreenContainer = dark_onJungleGreenContainer,
+    emeraldGreen = dark_EmeraldGreen,
+    onEmeraldGreen = dark_onEmeraldGreen,
+    emeraldGreenContainer = dark_EmeraldGreenContainer,
+    onEmeraldGreenContainer = dark_onEmeraldGreenContainer,
+    goldenrod = dark_Goldenrod,
+    onGoldenrod = dark_onGoldenrod,
+    goldenrodContainer = dark_GoldenrodContainer,
+    onGoldenrodContainer = dark_onGoldenrodContainer
+)
+
+fun BuzzChatColorScheme.contentColorFor(backgroundColor: Color): Color =
+    when (backgroundColor) {
+        light_ElectricBlueContainer -> light_onElectricBlueContainer
+        light_MintGreenContainer -> light_onMintGreenContainer
+        light_RoyalPurpleContainer -> light_onRoyalPurpleContainer
+        light_DeepRubyContainer -> light_onDeepRubyContainer
+        light_BrilliantTurquoiseContainer -> light_onBrilliantTurquoiseContainer
+        light_SlateBlueContainer -> light_onSlateBlueContainer
+        light_DarkMagentaContainer -> light_onDarkMagentaContainer
+        light_JungleGreenContainer -> light_onJungleGreenContainer
+        light_EmeraldGreenContainer -> light_onEmeraldGreenContainer
+        light_GoldenrodContainer -> light_onGoldenrodContainer
+        dark_ElectricBlueContainer -> dark_onElectricBlueContainer
+        dark_MintGreenContainer -> dark_onMintGreenContainer
+        dark_RoyalPurpleContainer -> dark_onRoyalPurpleContainer
+        dark_DeepRubyContainer -> dark_onDeepRubyContainer
+        dark_BrilliantTurquoiseContainer -> dark_onBrilliantTurquoiseContainer
+        dark_SlateBlueContainer -> dark_onSlateBlueContainer
+        dark_DarkMagentaContainer -> dark_onDarkMagentaContainer
+        dark_JungleGreenContainer -> dark_onJungleGreenContainer
+        dark_EmeraldGreenContainer -> dark_onEmeraldGreenContainer
+        dark_GoldenrodContainer -> dark_onGoldenrodContainer
+        else -> Color.Unspecified
+    }
+
+val LocalBuzzChatColorScheme = staticCompositionLocalOf {
+    lightBuzzChatColorScheme()
 }
