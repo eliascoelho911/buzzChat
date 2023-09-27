@@ -1,5 +1,7 @@
 package com.buzzchat.core.designsystem.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 val md_theme_light_primary = Color(0xFF506600)
@@ -155,3 +157,165 @@ val dark_Goldenrod = Color(0xFFFFBA48)
 val dark_onGoldenrod = Color(0xFF442B00)
 val dark_GoldenrodContainer = Color(0xFF614000)
 val dark_onGoldenrodContainer = Color(0xFFFFDDB1)
+
+object BuzzChatColors {
+    @Composable
+    fun electricBlue(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_ElectricBlue else light_ElectricBlue
+
+    @Composable
+    fun onElectricBlue(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onElectricBlue else light_onElectricBlue
+
+    @Composable
+    fun electricBlueContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_ElectricBlueContainer else light_ElectricBlueContainer
+
+    @Composable
+    fun onElectricBlueContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onElectricBlueContainer else light_onElectricBlueContainer
+
+    @Composable
+    fun mintGreen(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_MintGreen else light_MintGreen
+
+    @Composable
+    fun onMintGreen(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onMintGreen else light_onMintGreen
+
+    @Composable
+    fun mintGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_MintGreenContainer else light_MintGreenContainer
+
+    @Composable
+    fun onMintGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onMintGreenContainer else light_onMintGreenContainer
+
+    @Composable
+    fun royalPurple(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_RoyalPurple else light_RoyalPurple
+
+    @Composable
+    fun onRoyalPurple(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onRoyalPurple else light_onRoyalPurple
+
+    @Composable
+    fun royalPurpleContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_RoyalPurpleContainer else light_RoyalPurpleContainer
+
+    @Composable
+    fun onRoyalPurpleContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onRoyalPurpleContainer else light_onRoyalPurpleContainer
+
+    @Composable
+    fun deepRuby(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_DeepRuby else light_DeepRuby
+
+    @Composable
+    fun onDeepRuby(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onDeepRuby else light_onDeepRuby
+
+    @Composable
+    fun deepRubyContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_DeepRubyContainer else light_DeepRubyContainer
+
+    @Composable
+    fun onDeepRubyContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onDeepRubyContainer else light_onDeepRubyContainer
+
+    @Composable
+    fun brilliantTurquoise(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_BrilliantTurquoise else light_BrilliantTurquoise
+
+    @Composable
+    fun onBrilliantTurquoise(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onBrilliantTurquoise else light_onBrilliantTurquoise
+
+    @Composable
+    fun brilliantTurquoiseContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_BrilliantTurquoiseContainer else light_BrilliantTurquoiseContainer
+
+    @Composable
+    fun onBrilliantTurquoiseContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onBrilliantTurquoiseContainer else light_onBrilliantTurquoiseContainer
+
+    @Composable
+    fun slateBlue(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_SlateBlue else light_SlateBlue
+
+    @Composable
+    fun onSlateBlue(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onSlateBlue else light_onSlateBlue
+
+    @Composable
+    fun slateBlueContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_SlateBlueContainer else light_SlateBlueContainer
+
+    @Composable
+    fun onSlateBlueContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onSlateBlueContainer else light_onSlateBlueContainer
+
+    @Composable
+    fun darkMagenta(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_DarkMagenta else light_DarkMagenta
+
+    @Composable
+    fun onDarkMagenta(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onDarkMagenta else light_onDarkMagenta
+
+    @Composable
+    fun darkMagentaContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_DarkMagentaContainer else light_DarkMagentaContainer
+
+    @Composable
+    fun onDarkMagentaContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onDarkMagentaContainer else light_onDarkMagentaContainer
+
+    @Composable
+    fun jungleGreen(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_JungleGreen else light_JungleGreen
+
+    @Composable
+    fun onJungleGreen(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onJungleGreen else light_onJungleGreen
+
+    @Composable
+    fun jungleGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_JungleGreenContainer else light_JungleGreenContainer
+
+    @Composable
+    fun onJungleGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onJungleGreenContainer else light_onJungleGreenContainer
+
+    @Composable
+    fun emeraldGreen(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_EmeraldGreen else light_EmeraldGreen
+
+    @Composable
+    fun onEmeraldGreen(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onEmeraldGreen else light_onEmeraldGreen
+
+    @Composable
+    fun emeraldGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_EmeraldGreenContainer else light_EmeraldGreenContainer
+
+    @Composable
+    fun onEmeraldGreenContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onEmeraldGreenContainer else light_onEmeraldGreenContainer
+
+    @Composable
+    fun goldenrod(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_Goldenrod else light_Goldenrod
+
+    @Composable
+    fun onGoldenrod(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onGoldenrod else light_onGoldenrod
+
+    @Composable
+    fun goldenrodContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_GoldenrodContainer else light_GoldenrodContainer
+
+    @Composable
+    fun onGoldenrodContainer(isDark: Boolean = isSystemInDarkTheme()) =
+        if (isDark) dark_onGoldenrodContainer else light_onGoldenrodContainer
+}
