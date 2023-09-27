@@ -23,8 +23,7 @@ dependencies {
     debugApi(libs.androidx.compose.ui.tooling)
 
     implementation(project(":core:designsystem"))
-    implementation(project(":core:usecases"))
-    implementation(project(":core:model"))
+    implementation(project(":core:domain"))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.coil.kt)
