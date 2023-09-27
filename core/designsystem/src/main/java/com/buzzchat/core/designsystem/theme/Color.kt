@@ -541,26 +541,51 @@ fun darkBuzzChatColorScheme() = BuzzChatColorScheme(
 
 fun BuzzChatColorScheme.contentColorFor(backgroundColor: Color): Color =
     when (backgroundColor) {
-        light_ElectricBlueContainer -> light_onElectricBlueContainer
-        light_MintGreenContainer -> light_onMintGreenContainer
-        light_RoyalPurpleContainer -> light_onRoyalPurpleContainer
-        light_DeepRubyContainer -> light_onDeepRubyContainer
-        light_BrilliantTurquoiseContainer -> light_onBrilliantTurquoiseContainer
-        light_SlateBlueContainer -> light_onSlateBlueContainer
-        light_DarkMagentaContainer -> light_onDarkMagentaContainer
-        light_JungleGreenContainer -> light_onJungleGreenContainer
-        light_EmeraldGreenContainer -> light_onEmeraldGreenContainer
-        light_GoldenrodContainer -> light_onGoldenrodContainer
-        dark_ElectricBlueContainer -> dark_onElectricBlueContainer
-        dark_MintGreenContainer -> dark_onMintGreenContainer
-        dark_RoyalPurpleContainer -> dark_onRoyalPurpleContainer
-        dark_DeepRubyContainer -> dark_onDeepRubyContainer
-        dark_BrilliantTurquoiseContainer -> dark_onBrilliantTurquoiseContainer
-        dark_SlateBlueContainer -> dark_onSlateBlueContainer
-        dark_DarkMagentaContainer -> dark_onDarkMagentaContainer
-        dark_JungleGreenContainer -> dark_onJungleGreenContainer
-        dark_EmeraldGreenContainer -> dark_onEmeraldGreenContainer
-        dark_GoldenrodContainer -> dark_onGoldenrodContainer
+        light_ElectricBlueContainer -> light_onElectricBlue
+        light_MintGreenContainer -> light_onMintGreen
+        light_RoyalPurpleContainer -> light_onRoyalPurple
+        light_DeepRubyContainer -> light_onDeepRuby
+        light_BrilliantTurquoiseContainer -> light_onBrilliantTurquoise
+        light_SlateBlueContainer -> light_onSlateBlue
+        light_DarkMagentaContainer -> light_onDarkMagenta
+        light_JungleGreenContainer -> light_onJungleGreen
+        light_EmeraldGreenContainer -> light_onEmeraldGreen
+        light_GoldenrodContainer -> light_onGoldenrod
+        dark_ElectricBlueContainer -> dark_onElectricBlue
+        dark_MintGreenContainer -> dark_onMintGreen
+        dark_RoyalPurpleContainer -> dark_onRoyalPurple
+        dark_DeepRubyContainer -> dark_onDeepRuby
+        dark_BrilliantTurquoiseContainer -> dark_onBrilliantTurquoise
+        dark_SlateBlueContainer -> dark_onSlateBlue
+        dark_DarkMagentaContainer -> dark_onDarkMagenta
+        dark_JungleGreenContainer -> dark_onJungleGreen
+        dark_EmeraldGreenContainer -> dark_onEmeraldGreen
+        dark_GoldenrodContainer -> dark_onGoldenrod
+        else -> Color.Unspecified
+    }
+
+fun BuzzChatColorScheme.backgroundColorFor(contentColor: Color): Color =
+    when (contentColor) {
+        light_onElectricBlue -> light_ElectricBlueContainer
+        light_onMintGreen -> light_MintGreenContainer
+        light_onRoyalPurple -> light_RoyalPurpleContainer
+        light_onDeepRuby -> light_DeepRubyContainer
+        light_onBrilliantTurquoise -> light_BrilliantTurquoiseContainer
+        light_onSlateBlue -> light_SlateBlueContainer
+        light_onDarkMagenta -> light_DarkMagentaContainer
+        light_onJungleGreen -> light_JungleGreenContainer
+        light_onEmeraldGreen -> light_EmeraldGreenContainer
+        light_onGoldenrod -> light_GoldenrodContainer
+        dark_onElectricBlue -> dark_ElectricBlueContainer
+        dark_onMintGreen -> dark_MintGreenContainer
+        dark_onRoyalPurple -> dark_RoyalPurpleContainer
+        dark_onDeepRuby -> dark_DeepRubyContainer
+        dark_onBrilliantTurquoise -> dark_BrilliantTurquoiseContainer
+        dark_onSlateBlue -> dark_SlateBlueContainer
+        dark_onDarkMagenta -> dark_DarkMagentaContainer
+        dark_onJungleGreen -> dark_JungleGreenContainer
+        dark_onEmeraldGreen -> dark_EmeraldGreenContainer
+        dark_onGoldenrod -> dark_GoldenrodContainer
         else -> Color.Unspecified
     }
 
