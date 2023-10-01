@@ -1,9 +1,9 @@
 plugins {
-    id("buzzchat.android.library")
+    id("cubeSolver.android.library")
 }
 
 android {
-    namespace = "com.buzzchat.core.common"
+    namespace = "com.eliascoelho911.common"
 }
 
 dependencies {

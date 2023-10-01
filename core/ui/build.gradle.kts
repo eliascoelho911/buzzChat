@@ -1,13 +1,13 @@
 plugins {
-    id("buzzchat.android.library")
-    id("buzzchat.android.library.compose")
+    id("cubeSolver.android.library")
+    id("cubeSolver.android.library.compose")
 }
 
 android {
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    namespace = "com.buzzchat.core.ui"
+    namespace = "com.eliascoelho911.compose.ui"
 }
 
 dependencies {

@@ -1,4 +1,4 @@
-package com.buzzchat.core.designsystem.theme
+package com.eliascoelho911.cubesolver.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -6,7 +6,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.buzzchat.core.designsystem.R
+import com.eliascoelho911.cubesolver.designsystem.R
 
 private val InterFontFamily = FontFamily(
     Font(R.font.inter_thin, FontWeight.Thin),

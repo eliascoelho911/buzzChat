@@ -1,4 +1,4 @@
-package com.buzzchat.core.designsystem
+package com.eliascoelho911.cubesolver.designsystem
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.text.BasicTextField

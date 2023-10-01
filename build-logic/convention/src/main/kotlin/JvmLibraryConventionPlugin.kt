@@ -1,4 +1,4 @@
-import com.buzzchat.configureKotlinJvm
+import com.cubesolver.configureKotlinJvm
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -7,7 +7,7 @@ class JvmLibraryConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("org.jetbrains.kotlin.jvm")
-                apply("buzzchat.android.lint")
+                apply("cubeSolver.android.lint")
             }
             configureKotlinJvm()
         }

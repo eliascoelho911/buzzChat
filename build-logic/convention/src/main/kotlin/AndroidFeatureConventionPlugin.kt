@@ -1,6 +1,6 @@
 import com.android.build.gradle.LibraryExtension
-import com.buzzchat.configureGradleManagedDevices
-import com.buzzchat.libs
+import com.cubesolver.configureGradleManagedDevices
+import com.cubesolver.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -11,7 +11,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
-                apply("buzzchat.android.library")
+                apply("cubeSolver.android.library")
             }
             extensions.configure<LibraryExtension> {
                 defaultConfig {

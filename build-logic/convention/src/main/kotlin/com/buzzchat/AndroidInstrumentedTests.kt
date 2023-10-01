@@ -1,4 +1,4 @@
-package com.buzzchat
+package com.cubesolver
 
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import org.gradle.api.Project

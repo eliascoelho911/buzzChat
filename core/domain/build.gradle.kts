@@ -1,5 +1,5 @@
 plugins {
-    id("buzzchat.jvm.library")
+    id("cubeSolver.jvm.library")
 }
 
 dependencies {

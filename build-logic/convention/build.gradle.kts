@@ -4,7 +4,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.buzzchat.buildlogic"
+group = "com.eliascoelho911.cubesolver.buildlogic"
 
 // Configure the build-logic plugins to target JDK 17
 // This matches the JDK used to build the project, and is not related to what is running on device.
@@ -29,47 +29,47 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplicationCompose") {
-            id = "buzzchat.android.application.compose"
+            id = "cubeSolver.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidApplication") {
-            id = "buzzchat.android.application"
+            id = "cubeSolver.android.application"
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "buzzchat.android.library.compose"
+            id = "cubeSolver.android.library.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "buzzchat.android.library"
+            id = "cubeSolver.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidFeature") {
-            id = "buzzchat.android.feature"
+            id = "cubeSolver.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
         register("androidLibraryJacoco") {
-            id = "buzzchat.android.library.jacoco"
+            id = "cubeSolver.android.library.jacoco"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
         }
         register("androidTest") {
-            id = "buzzchat.android.test"
+            id = "cubeSolver.android.test"
             implementationClass = "AndroidTestConventionPlugin"
         }
         register("androidRoom") {
-            id = "buzzchat.android.room"
+            id = "cubeSolver.android.room"
             implementationClass = "AndroidRoomConventionPlugin"
         }
         register("androidFirebase") {
-            id = "buzzchat.android.application.firebase"
+            id = "cubeSolver.android.application.firebase"
             implementationClass = "AndroidApplicationFirebaseConventionPlugin"
         }
         register("androidLint") {
-            id = "buzzchat.android.lint"
+            id = "cubeSolver.android.lint"
             implementationClass = "AndroidLintConventionPlugin"
         }
         register("jvmLibrary") {
-            id = "buzzchat.jvm.library"
+            id = "cubeSolver.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
         }
     }

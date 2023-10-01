@@ -1,8 +1,8 @@
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
-import com.buzzchat.configureGradleManagedDevices
-import com.buzzchat.configureKotlinAndroid
-import com.buzzchat.disableUnnecessaryAndroidTests
+import com.cubesolver.configureGradleManagedDevices
+import com.cubesolver.configureKotlinAndroid
+import com.cubesolver.disableUnnecessaryAndroidTests
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -15,7 +15,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.library")
                 apply("org.jetbrains.kotlin.android")
-                apply("buzzchat.android.lint")
+                apply("cubeSolver.android.lint")
             }
 
             extensions.configure<LibraryExtension> {

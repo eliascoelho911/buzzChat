@@ -1,4 +1,4 @@
-package com.buzzchat
+package com.cubesolver
 
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog

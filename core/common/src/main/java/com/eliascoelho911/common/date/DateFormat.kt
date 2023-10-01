@@ -1,4 +1,4 @@
-package com.buzzchat.core.common.date
+package com.eliascoelho911.common.date
 
 import org.joda.time.LocalDateTime
 import org.joda.time.format.DateTimeFormat

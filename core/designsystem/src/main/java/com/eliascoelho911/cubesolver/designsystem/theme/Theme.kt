@@ -1,4 +1,4 @@
-package com.buzzchat.core.designsystem.theme
+package com.eliascoelho911.cubesolver.designsystem.theme
 
 import android.app.Activity
 import android.os.Build
@@ -83,7 +83,7 @@ private val DarkColors = darkColorScheme(
 )
 
 @Composable
-fun BuzzChatTheme(
+fun CubeSolverTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
@@ -97,8 +97,8 @@ fun BuzzChatTheme(
         darkTheme -> DarkColors
         else -> LightColors
     }
-    val buzzChatColorScheme = remember(darkTheme) {
-        if (darkTheme) darkBuzzChatColorScheme() else lightBuzzChatColorScheme()
+    val cubesolverColorScheme = remember(darkTheme) {
+        if (darkTheme) darkCubeSolverCustomColors() else lightCubeSolverCustomColors()
     }
 
     val view = LocalView.current
@@ -111,7 +111,7 @@ fun BuzzChatTheme(
     }
 
     CompositionLocalProvider(
-        LocalBuzzChatColorScheme provides buzzChatColorScheme,
+        LocalCubeSolverCustomColors provides cubesolverColorScheme,
     ) {
         MaterialTheme(
             colorScheme = colorScheme,
