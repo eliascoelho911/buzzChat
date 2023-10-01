@@ -1,13 +1,13 @@
 plugins {
-    id("cubeSolver.android.application")
-    id("cubeSolver.android.application.compose")
+    id("buzzchat.android.application")
+    id("buzzchat.android.application.compose")
 }
 
 android {
-    namespace = "com.cubesolver"
+    namespace = "com.buzzchat"
 
     defaultConfig {
-        applicationId = "com.cubesolver"
+        applicationId = "com.buzzchat"
         versionCode = 1
         versionName = "0.0.1"
 
@@ -19,11 +19,11 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix = com.cubesolver.cubesolverBuildType.DEBUG.applicationIdSuffix
+            applicationIdSuffix = com.buzzchat.BuzzChatBuildType.DEBUG.applicationIdSuffix
         }
         release {
             isMinifyEnabled = true
-            applicationIdSuffix = com.cubesolver.cubesolverBuildType.RELEASE.applicationIdSuffix
+            applicationIdSuffix = com.buzzchat.BuzzChatBuildType.RELEASE.applicationIdSuffix
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

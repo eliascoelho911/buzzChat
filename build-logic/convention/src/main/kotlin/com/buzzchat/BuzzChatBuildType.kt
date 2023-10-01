@@ -1,6 +1,6 @@
-package com.cubesolver
+package com.buzzchat
 
-enum class cubesolverBuildType(val applicationIdSuffix: String? = null) {
+enum class BuzzChatBuildType(val applicationIdSuffix: String? = null) {
     DEBUG(".debug"),
     RELEASE;
 }

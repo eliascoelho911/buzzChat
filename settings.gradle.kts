@@ -15,7 +15,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "cubesolver"
+rootProject.name = "buzzChat"
 
 include(":app")
 include(":core:domain")
@@ -23,3 +23,4 @@ include(":core:designsystem")
 include(":core:testing")
 include(":core:common")
 include(":core:ui")
+include(":features:note-taking")

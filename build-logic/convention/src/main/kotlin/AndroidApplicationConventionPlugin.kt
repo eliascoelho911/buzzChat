@@ -1,6 +1,6 @@
 import com.android.build.api.dsl.ApplicationExtension
-import com.cubesolver.configureGradleManagedDevices
-import com.cubesolver.configureKotlinAndroid
+import com.buzzchat.configureGradleManagedDevices
+import com.buzzchat.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -11,7 +11,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
-                apply("cubeSolver.android.lint")
+                apply("buzzchat.android.lint")
             }
 
             extensions.configure<ApplicationExtension> {

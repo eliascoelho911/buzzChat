@@ -1,4 +1,4 @@
-package com.cubesolver.core.ui
+package com.buzzchat.core.ui
 
 import androidx.compose.ui.tooling.preview.Preview
 
