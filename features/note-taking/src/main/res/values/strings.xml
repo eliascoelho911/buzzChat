@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="group_field_label">Grupo:</string>
+    <string name="group_field_placeholder">Digite o nome do grupo</string>
+    <string name="group_field_create_new">Novo grupo \"%s\"</string>
+</resources>
