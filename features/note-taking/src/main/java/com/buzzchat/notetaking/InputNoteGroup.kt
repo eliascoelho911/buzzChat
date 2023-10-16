@@ -1,4 +1,4 @@
-package com.buzzchat.notetaking.inputnote
+package com.buzzchat.notetaking
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
