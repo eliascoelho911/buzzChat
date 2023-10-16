@@ -48,14 +48,6 @@ import com.buzzchat.core.designsystem.BasicTextFieldWithPlaceholder
 import com.buzzchat.core.designsystem.theme.BuzzChatTheme
 import com.buzzchat.core.designsystem.theme.buzzChatColorScheme
 
-@Immutable
-internal data class Group(
-    val name: String,
-    val color: Color,
-    val icon: ImageVector? = null,
-)
-
-//Todo: Toda a lógica de criação de grupos está aqui, mas deveria estar no ViewModel
 @Composable
 internal fun InputNoteGroup(
     selectedGroup: Group,
@@ -120,6 +112,13 @@ internal fun InputNoteGroup(
         }
     }
 }
+
+@Immutable
+internal data class Group(
+    val name: String,
+    val color: Color,
+    val icon: ImageVector? = null,
+)
 
 @Composable
 private fun EditableGroupDropdown(
